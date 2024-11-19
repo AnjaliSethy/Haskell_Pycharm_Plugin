@@ -1,0 +1,70 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.pycharm-plugin.PyCharm</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>PyCharm</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Haskell HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+    <actions>
+        <action id="CreateHaskellFileAction"
+                class="org.intellij.sdk.language.actions.CreateHaskellFileAction"
+                text="Haskell File"
+                description="Creates a new Haskell file in the current directory"
+                icon="/icons/plugin-hs-Icon.svg">
+            <add-to-group group-id="NewGroup" anchor="first"/>
+            <add-to-group group-id="FileMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType
+                name="Haskell File"
+                implementationClass="org.intellij.sdk.language.HaskellFileType"
+                fieldName="INSTANCE"
+                language="Haskell"
+                extensions="hs"/>
+
+
+        <lang.parserDefinition
+                    language="Haskell"
+                    implementationClass="org.intellij.sdk.language.HaskellParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory
+                language="Haskell"
+                implementationClass="org.intellij.sdk.language.HaskellSyntaxHighlighterFactory"/>
+
+        <colorSettingsPage
+                implementation="org.intellij.sdk.language.HaskellColorSettingsPage"/>
+
+        <completion.contributor
+                language="Haskell"
+                implementationClass="org.intellij.sdk.language.HaskellCompletionContributor"/>
+
+        <psi.referenceContributor
+                language="Haskell"
+                implementation="org.intellij.sdk.language.references.HaskellReferenceContributor"/>
+
+
+
+    </extensions>
+</idea-plugin>
