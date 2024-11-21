@@ -1,7 +1,8 @@
 package org.intellij.sdk.language;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
-import groovyjarjarantlr4.v4.runtime.misc.NotNull;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
@@ -31,6 +32,7 @@ public final class HaskellFileType extends LanguageFileType {
         return "haskell";
     }
 
+    @Nullable
     @Override
     public Icon getIcon() {
         return HaskellIcons.FILE;

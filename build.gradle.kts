@@ -19,14 +19,10 @@ dependencies {
 }
 
 // Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-//    version.set("2023.2.6")
-    version.set("2024.2.4")
+    version.set("2024.2.4") // Specify the IntelliJ version
     type.set("PY") // Target IDE Platform
-    // Specify the plugins your plugin depends on
-//    plugins.set(listOf("python")) // Add the Python plugin//
-    plugins.set(listOf(/* Plugin Dependencies */))
+    plugins.set(listOf(/* Plugin Dependencies */)) // Specify any required plugins
 }
 
 sourceSets["main"].java.srcDirs("src/main/gen")
@@ -42,8 +38,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("232")
-        untilBuild.set("242.*")
+        sinceBuild.set("232") // Adjust based on your plugin's compatibility
+        untilBuild.set("242.*") // Adjust based on your plugin's compatibility
     }
 
     signPlugin {
@@ -54,5 +50,10 @@ tasks {
 
     publishPlugin {
         token.set(System.getenv("PUBLISH_TOKEN"))
+    }
+
+    // Add a task to compile with deprecation warnings
+    withType<JavaCompile> {
+        options.compilerArgs.add("-Xlint:deprecation") // Enable deprecation warnings
     }
 }

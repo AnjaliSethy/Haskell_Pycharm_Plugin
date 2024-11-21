@@ -164,6 +164,35 @@ public class HaskellCompletionContributor extends CompletionContributor {
 //        }
 //    }
 
+    private void addOperatorCompletions(CompletionResultSet resultSet) {
+        List<String> operators = Arrays.asList(
+                "+", "-", "*", "/", "==", "<", ">", "<=", ">="
+        );
+        for (String operator : operators) {
+            resultSet.addElement(LookupElementBuilder.create(operator));
+        }
+    }
+
+
+    private void addPlutusIdentifierCompletions(CompletionResultSet resultSet) {
+        List<String> plutusIdentifiers = Arrays.asList(
+                "Ledger", "PlutusTx", "Contract", "mkValidator", "txSignedBy"
+        );
+        for (String identifier : plutusIdentifiers) {
+            resultSet.addElement(LookupElementBuilder.create(identifier));
+        }
+    }
+
+    private void addTypeclassCompletions(CompletionResultSet resultSet) {
+        List<String> typeclasses = Arrays.asList(
+                "Eq", "Ord", "Show", "Functor", "Monad"
+        );
+        for (String typeclass : typeclasses) {
+            resultSet.addElement(LookupElementBuilder.create(typeclass));
+        }
+    }
+
+
     private void addTypeCompletions(CompletionResultSet resultSet) {
         List<String> types = Arrays.asList(
                 "Int", "Bool", "Char", "String", "Float", "Double",

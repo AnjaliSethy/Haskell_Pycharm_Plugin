@@ -8,15 +8,12 @@
     <name>PyCharm</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor>Anjali Sethy</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Haskell HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-  ]]></description>
+    <description>A comprehensive Haskell development plugin for PyCharm that enhances your Haskell programming experience. This plugin provides essential features for Haskell development within the PyCharm IDE</description>
 
     <actions>
         <action id="CreateHaskellFileAction"
@@ -27,6 +24,24 @@
             <add-to-group group-id="NewGroup" anchor="first"/>
             <add-to-group group-id="FileMenu" anchor="last"/>
         </action>
+        <group id="Haskell.RunMenu"
+               text="Haskell"
+               description="Haskell run/debug actions"
+               popup="true">
+            <add-to-group group-id="RunMenu" anchor="first"/>
+            <action id="CompileHaskell"
+                    class="org.intellij.sdk.language.actions.CompileHaskellAction"
+                    text="Compile Haskell"
+                    description="Compile Haskell source file"/>
+            <action id="RunHaskell"
+                    class="org.intellij.sdk.language.actions.RunHaskellAction"
+                    text="Run Haskell"
+                    description="Run Haskell source file"/>
+            <action id="DebugHaskell"
+                    class="org.intellij.sdk.language.actions.DebugHaskellAction"
+                    text="Debug Haskell"
+                    description="Debug Haskell source file"/>
+        </group>
     </actions>
 
     <!-- Product and plugin compatibility requirements.
@@ -63,8 +78,6 @@
         <psi.referenceContributor
                 language="Haskell"
                 implementation="org.intellij.sdk.language.references.HaskellReferenceContributor"/>
-
-
 
     </extensions>
 </idea-plugin>
