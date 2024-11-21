@@ -1,4 +1,4 @@
-package org.intellij.sdk.language;
+package org.intellij.sdk.language.icons;
 
 import com.intellij.openapi.util.IconLoader;
 

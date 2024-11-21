@@ -7,7 +7,7 @@ import com.intellij.psi.PsiReferenceBase;
 import com.intellij.psi.ResolveResult;
 import com.intellij.psi.PsiElementResolveResult;
 import com.intellij.openapi.util.TextRange;
-import org.intellij.sdk.language.HaskellIcons;
+import org.intellij.sdk.language.icons.HaskellIcons;
 import org.intellij.sdk.language.utils.HaskellUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

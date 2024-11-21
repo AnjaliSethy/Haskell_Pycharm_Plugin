@@ -1,6 +1,7 @@
 package org.intellij.sdk.language;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
+import org.intellij.sdk.language.icons.HaskellIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

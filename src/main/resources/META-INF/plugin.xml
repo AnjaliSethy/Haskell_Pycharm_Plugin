@@ -66,10 +66,10 @@
 
         <lang.syntaxHighlighterFactory
                 language="Haskell"
-                implementationClass="org.intellij.sdk.language.HaskellSyntaxHighlighterFactory"/>
+                implementationClass="org.intellij.sdk.language.highlighter.HaskellSyntaxHighlighterFactory"/>
 
         <colorSettingsPage
-                implementation="org.intellij.sdk.language.HaskellColorSettingsPage"/>
+                implementation="org.intellij.sdk.language.highlighter.HaskellColorSettingsPage"/>
 
         <completion.contributor
                 language="Haskell"
